@@ -21,6 +21,24 @@
             "console": "integratedTerminal",
             "args": ["--env_name", "custom_name"],
             "cwd": "${workspaceFolder}"
+        },
+        {
+            "name": "example_async.py default",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/example_async.py",
+            "console": "integratedTerminal",
+            "args": [],
+            "cwd": "${workspaceFolder}"
+        },
+        {
+            "name": "example_async.py env_name=custom_name",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${workspaceFolder}/src/example_async.py",
+            "console": "integratedTerminal",
+            "args": ["--env_name", "custom_name"],
+            "cwd": "${workspaceFolder}"
         }
     ]
 }
