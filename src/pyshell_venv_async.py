@@ -1,14 +1,14 @@
 #! /usr/bin/env python3
 
 #------------------------------------------------------------------------------
-# pyshell_venv
+# pyshell_venv_async
 #------------------------------------------------------------------------------
 # Re-run the Python shell script in the venv environment
 #
 #------------------------------------------------------------------------------
 #
 # This code creates a virtual environment and re-executes it when called from Python code.
-# This code itself works by itself as `src/pyshell_venv.py` without adding any libraries.
+# This code itself works by itself as `src/pyshell_venv_async.py` without adding any libraries.
 #
 # The purpose is to allow you to freely install libraries and run Python shell scripts without polluting the host's Python environment.
 #
@@ -23,15 +23,17 @@
 #
 # Example:
 #
-# `src/example.py`
+# `src/example_async.py`
 #
 # ```python
-# from pyshell_venv import PyShellVenv
+# import pyshell_venv_async as psv
 #
-# if not PyShellVenv.is_in_venv():
+# is_in_venv = await psv.is_in_venv()
+# if not is_in_venv:
 #     require_package = "numpy"
-#     psv = PyShellVenv(require_package_text=require_package)
-#     result: int = psv.execute()
+#     result: int = await psv.execute(
+#         require_package_text=require_package
+#     )
 #     sys.exit(result)
 #
 # # This code runs in a virtual environment.
